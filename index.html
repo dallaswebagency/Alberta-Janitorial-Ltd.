@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alberta Janitorial Ltd. | Calgary Commercial &amp; Industrial Janitorial Since 1975</title>
+<meta name="description" content="Family owned janitorial company serving Calgary and Southern Alberta since 1975. Commercial, industrial, office, school, warehouse, retail and floor care cleaning. Call (403) 272-7801.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#00227A;
+  --navy-deep:#06123F;
+  --red:#E1000F;
+  --red-bright:#F30000;
+  --paper:#F5F3EE;
+  --paper-2:#ECE8DF;
+  --ink:#0C1530;
+  --mute:#5A6178;
+  --line:rgba(12,21,48,.14);
+  --head:'Archivo',system-ui,sans-serif;
+  --body:'Public Sans',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);color:var(--ink);background:var(--paper);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+.wrap{width:min(1240px,92vw);margin:0 auto}
+.h{font-family:var(--head);font-stretch:78%;font-weight:800;line-height:.98;letter-spacing:-.01em;text-transform:uppercase}
+.eyebrow{font-family:var(--head);font-stretch:110%;font-weight:600;font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--red);display:flex;align-items:center;gap:12px}
+.eyebrow::before{content:"";width:28px;height:2px;background:currentColor}
+
+/* utility bar */
+.util{background:var(--navy-deep);color:#C9D1EA;font-size:13.5px}
+.util .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:9px 0}
+.util a{text-decoration:none}
+.util a:hover{color:#fff}
+.util-left{display:flex;gap:26px;flex-wrap:wrap}
+.util-left span b{color:#fff;font-weight:600}
+.social{display:flex;gap:6px}
+.social a{width:28px;height:28px;display:grid;place-items:center;border:1px solid rgba(255,255,255,.18)}
+.social a:hover{background:var(--red);border-color:var(--red)}
+.social svg{width:13px;height:13px;fill:currentColor}
+
+/* header */
+header.site{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50}
+header.site .wrap{display:flex;align-items:center;justify-content:space-between;height:86px}
+.logo img{height:66px;width:auto}
+nav.main{display:flex;align-items:center;gap:34px}
+nav.main a{font-family:var(--head);font-stretch:100%;font-weight:600;font-size:14px;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;position:relative;padding:6px 0}
+nav.main a.active::after,nav.main a:hover::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:2px;background:var(--red)}
+.call-btn{display:flex;align-items:center;gap:12px;background:var(--red);color:#fff;text-decoration:none;padding:12px 20px 12px 14px;font-family:var(--head);font-weight:700;font-stretch:90%;font-size:17px;letter-spacing:.02em}
+.call-btn small{display:block;font-size:10.5px;letter-spacing:.2em;font-weight:600;opacity:.85}
+.call-btn .ic{width:34px;height:34px;background:rgba(255,255,255,.16);display:grid;place-items:center}
+.call-btn:hover{background:#C2000D}
+.burger{display:none;background:none;border:0;width:44px;height:44px;cursor:pointer}
+.burger span{display:block;width:24px;height:2px;background:var(--ink);margin:5px auto}
+
+/* hero */
+.hero{position:relative;padding:70px 0 0;overflow:hidden}
+.hero-top{display:grid;grid-template-columns:1.25fr .75fr;gap:60px;align-items:end}
+.hero .sub{font-family:var(--head);font-stretch:110%;font-weight:600;font-size:14px;letter-spacing:.2em;text-transform:uppercase;color:var(--navy);margin-bottom:22px;display:flex;align-items:center;gap:14px}
+.hero .sub i{width:10px;height:10px;background:var(--red);display:inline-block}
+.hero h1{font-size:clamp(46px,6.6vw,96px);color:var(--navy-deep)}
+.hero h1 em{font-style:normal;color:var(--red)}
+.deserve{margin-top:30px;font-size:21px;color:var(--mute);display:flex;flex-wrap:wrap;align-items:baseline;gap:10px}
+.rotor{display:inline-block;position:relative;height:1.45em;overflow:hidden;vertical-align:bottom;min-width:7.2em}
+.rotor span{position:absolute;left:0;top:0;font-family:var(--head);font-weight:800;font-stretch:95%;text-transform:uppercase;letter-spacing:.02em;color:var(--navy);border-bottom:3px solid var(--red);line-height:1.3;transform:translateY(110%);transition:transform .55s cubic-bezier(.7,0,.2,1)}
+.rotor span.on{transform:translateY(0)}
+.rotor span.out{transform:translateY(-110%)}
+.hero-side{padding-bottom:10px}
+.hero-side p{font-size:17px;color:var(--mute);border-left:3px solid var(--red);padding-left:20px}
+.hero-band{margin-top:60px;position:relative;display:grid;grid-template-columns:1fr 440px;min-height:540px}
+.hero-photo{position:relative;overflow:hidden}
+.hero-photo img{width:100%;height:100%;object-fit:cover}
+.hero-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(6,18,63,.0) 50%,rgba(6,18,63,.35))}
+.since-tag{position:absolute;left:0;bottom:0;background:var(--paper);padding:22px 30px 0 0;display:flex;align-items:flex-end;gap:16px}
+.since-tag b{font-family:var(--head);font-stretch:70%;font-weight:900;font-size:86px;line-height:.8;color:transparent;-webkit-text-stroke:2px var(--navy)}
+.since-tag span{font-family:var(--head);font-weight:700;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--navy);padding-bottom:4px;line-height:1.4}
+
+/* quote form */
+.quote{background:var(--navy);color:#fff;padding:40px 38px;position:relative}
+.quote::before{content:"";position:absolute;top:0;left:0;right:0;height:6px;background:var(--red)}
+.quote h2{font-family:var(--head);font-stretch:85%;font-weight:800;font-size:32px;text-transform:uppercase;line-height:1}
+.quote p.lead{color:#B9C3E6;font-size:15px;margin:10px 0 24px}
+.field{margin-bottom:14px}
+.field label{display:block;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:#9FAEDF;margin-bottom:6px}
+.field input,.field select,.field textarea{width:100%;background:transparent;border:0;border-bottom:1.5px solid rgba(255,255,255,.28);color:#fff;font:inherit;font-size:16px;padding:8px 0;outline:none;border-radius:0}
+.field select option{color:var(--ink)}
+.field textarea{resize:vertical;min-height:62px}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:#fff}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.submit{margin-top:10px;width:100%;border:0;background:var(--red);color:#fff;font-family:var(--head);font-weight:800;font-stretch:90%;font-size:18px;text-transform:uppercase;letter-spacing:.06em;padding:17px;cursor:pointer;display:flex;justify-content:space-between;align-items:center}
+.submit:hover{background:#fff;color:var(--red)}
+.quote small.note{display:block;margin-top:14px;color:#8E9CCB;font-size:13px}
+.quote small.note a{color:#fff}
+
+/* mission */
+.mission{padding:120px 0 110px}
+.mission .wrap{display:grid;grid-template-columns:330px 1fr;gap:80px}
+.big-num{font-family:var(--head);font-stretch:62%;font-weight:900;font-size:230px;line-height:.78;color:var(--red);letter-spacing:-.03em}
+.big-num sup{font-size:.4em;vertical-align:top;position:relative;top:.12em}
+.big-cap{font-family:var(--head);font-weight:700;letter-spacing:.2em;text-transform:uppercase;font-size:13px;color:var(--navy);margin-top:16px;border-top:2px solid var(--navy);padding-top:12px}
+.mission-text p.lede{font-family:var(--head);font-stretch:92%;font-weight:600;font-size:clamp(26px,2.7vw,38px);line-height:1.18;color:var(--navy-deep);letter-spacing:-.005em}
+.mission-text p.lede mark{background:none;color:var(--red)}
+.mission-text p.more{margin-top:26px;font-size:19px;color:var(--mute);max-width:640px}
+.link-arrow{display:inline-flex;align-items:center;gap:12px;margin-top:30px;font-family:var(--head);font-weight:700;font-size:14px;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;color:var(--navy);border-bottom:2px solid var(--red);padding-bottom:6px}
+.link-arrow:hover{color:var(--red)}
+
+/* services index */
+.services{background:var(--navy-deep);color:#fff;padding:110px 0}
+.svc-head{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;margin-bottom:56px}
+.svc-head h2{font-size:clamp(40px,5vw,72px)}
+.svc-head h2 span{color:var(--red-bright)}
+.svc-head p{max-width:380px;color:#AEB8DC}
+.svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:start}
+.svc-list{list-style:none;border-top:1px solid rgba(255,255,255,.14)}
+.svc-list li{border-bottom:1px solid rgba(255,255,255,.14)}
+.svc-list button{all:unset;cursor:pointer;display:grid;grid-template-columns:54px 1fr 30px;align-items:center;width:100%;padding:22px 0}
+.svc-list .n{font-family:var(--head);font-size:13px;font-weight:600;letter-spacing:.12em;color:#7383BF}
+.svc-list .t{font-family:var(--head);font-stretch:80%;font-weight:800;font-size:34px;text-transform:uppercase;line-height:1;transition:color .25s,transform .35s}
+.svc-list .a{width:30px;height:30px;border:1px solid rgba(255,255,255,.25);display:grid;place-items:center;transition:.3s}
+.svc-list .a svg{width:12px;height:12px;stroke:#fff;fill:none;stroke-width:2}
+.svc-list .d{display:none;color:#B9C3E6;font-size:15.5px;padding:0 0 22px 54px;max-width:520px}
+.svc-list li.on .t{color:var(--red-bright);transform:translateX(8px)}
+.svc-list li.on .a{background:var(--red);border-color:var(--red);transform:rotate(45deg)}
+.svc-stage{position:sticky;top:120px}
+.svc-frame{position:relative;aspect-ratio:4/3;overflow:hidden;clip-path:polygon(0 0,calc(100% - 56px) 0,100% 56px,100% 100%,0 100%)}
+.svc-frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.06);transition:opacity .6s,transform 1.2s}
+.svc-frame img.on{opacity:1;transform:scale(1)}
+.svc-cap{display:grid;grid-template-columns:auto 1fr;gap:22px;margin-top:26px;align-items:start}
+.svc-cap .num{font-family:var(--head);font-stretch:65%;font-weight:900;font-size:64px;line-height:.8;color:var(--red-bright)}
+.svc-cap h3{font-family:var(--head);font-weight:800;font-stretch:85%;font-size:22px;text-transform:uppercase;letter-spacing:.03em}
+.svc-cap p{color:#B9C3E6;margin-top:6px}
+
+/* community */
+.community{padding:120px 0}
+.community .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:90px;align-items:center}
+.com-media{position:relative}
+.com-media .main{aspect-ratio:3/4;overflow:hidden;clip-path:polygon(0 0,100% 0,100% 100%,56px 100%,0 calc(100% - 56px))}
+.com-media .main img{width:100%;height:100%;object-fit:cover}
+.com-media .inset{position:absolute;right:-48px;top:60px;width:46%;aspect-ratio:1;border:10px solid var(--paper);overflow:hidden}
+.com-media .inset img{width:100%;height:100%;object-fit:cover}
+.com-media .stamp{position:absolute;left:-26px;bottom:70px;background:var(--red);color:#fff;padding:18px 22px;font-family:var(--head);font-weight:800;font-stretch:80%;text-transform:uppercase;font-size:20px;line-height:1.05}
+.com-media .stamp small{display:block;font-size:11px;letter-spacing:.2em;font-weight:600;font-stretch:100%;opacity:.85;margin-bottom:4px}
+.community h2{font-size:clamp(38px,4.4vw,62px);color:var(--navy-deep);margin:20px 0 26px}
+.community h2 span{color:var(--red)}
+.community p{color:var(--mute);font-size:18px}
+.values{margin-top:36px;display:grid;grid-template-columns:repeat(3,1fr);border-top:2px solid var(--navy)}
+.values div{padding:20px 18px 0 0}
+.values div+div{padding-left:18px;border-left:1px solid var(--line)}
+.values b{display:block;font-family:var(--head);font-weight:800;font-stretch:85%;text-transform:uppercase;font-size:17px;color:var(--navy);line-height:1.15}
+.values span{font-size:14px;color:var(--mute);display:block;margin-top:6px;line-height:1.45}
+
+/* reviews */
+.reviews{background:var(--paper-2);padding:110px 0;position:relative;overflow:hidden}
+.reviews::before{content:"\201C";position:absolute;right:-30px;top:-120px;font-family:Georgia,serif;font-size:620px;color:rgba(0,34,122,.06);line-height:1}
+.rev-top{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-bottom:54px;position:relative}
+.rev-top h2{font-size:clamp(40px,4.8vw,68px);color:var(--navy-deep)}
+.rev-links{display:flex;gap:10px}
+.rev-links a{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--line);padding:12px 16px;text-decoration:none;font-weight:600;font-size:14px}
+.rev-links a:hover{border-color:var(--navy)}
+.rev-links svg{width:16px;height:16px}
+.rev-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:28px;position:relative}
+.rev{background:#fff;padding:40px;display:flex;flex-direction:column}
+.rev.feature{background:var(--navy);color:#fff;grid-row:span 2;padding:54px 50px;justify-content:space-between}
+.rev.feature blockquote{flex:0}
+.stars{display:flex;gap:4px;margin-bottom:22px}
+.stars svg{width:18px;height:18px;fill:var(--red)}
+.rev.feature .stars svg{fill:#fff}
+.rev blockquote{font-size:18px;line-height:1.55;flex:1}
+.rev.feature blockquote{font-family:var(--head);font-stretch:90%;font-weight:600;font-size:clamp(24px,2.3vw,32px);line-height:1.25}
+.who{display:flex;align-items:center;gap:14px;margin-top:28px;padding-top:22px;border-top:1px solid var(--line)}
+.rev.feature .who{border-color:rgba(255,255,255,.18)}
+.who .ini{width:46px;height:46px;background:var(--red);color:#fff;display:grid;place-items:center;font-family:var(--head);font-weight:800;font-size:16px}
+.who b{display:block;font-family:var(--head);font-weight:700;font-size:16px;text-transform:uppercase;letter-spacing:.04em}
+.who span{font-size:14px;color:var(--mute)}
+.rev.feature .who span{color:#B9C3E6}
+.rev .more{margin-top:16px;font-size:14px;font-weight:600;color:var(--red);text-decoration:none}
+
+/* safety */
+.safety{padding:80px 0;border-bottom:1px solid var(--line)}
+.safety .wrap{display:grid;grid-template-columns:auto 1fr auto;gap:56px;align-items:center}
+.safety .seal{width:150px}
+.safety h3{font-family:var(--head);font-stretch:85%;font-weight:800;font-size:30px;text-transform:uppercase;color:var(--navy-deep);line-height:1.05;margin:12px 0}
+.safety p{color:var(--mute);max-width:640px}
+.safety p a{color:var(--navy);font-weight:600}
+.safety .acsa{width:250px;padding-left:40px;border-left:1px solid var(--line)}
+
+/* contact / consult */
+.consult{padding:110px 0 0}
+.consult-grid{display:grid;grid-template-columns:1fr 1fr;background:var(--red);color:#fff}
+.consult-copy{padding:70px 60px}
+.consult-copy h2{font-size:clamp(40px,4.6vw,66px)}
+.consult-copy p{font-size:19px;margin-top:18px;opacity:.92;max-width:460px}
+.ways{margin-top:40px;display:grid;gap:2px}
+.ways a{display:grid;grid-template-columns:48px 1fr 24px;align-items:center;gap:16px;text-decoration:none;background:rgba(0,0,0,.12);padding:16px 18px;transition:background .25s}
+.ways a:hover{background:var(--navy-deep)}
+.ways .ic{width:48px;height:48px;background:#fff;color:var(--red);display:grid;place-items:center}
+.ways .ic svg{width:20px;height:20px;fill:currentColor}
+.ways b{display:block;font-family:var(--head);font-weight:800;font-stretch:90%;font-size:19px;text-transform:uppercase}
+.ways span{font-size:14px;opacity:.85}
+.ways .go{font-size:20px}
+.map{min-height:520px;position:relative;background:var(--navy-deep)}
+.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0;filter:grayscale(.35) contrast(1.05)}
+.map .addr{position:absolute;left:24px;bottom:24px;background:#fff;color:var(--ink);padding:18px 22px;max-width:300px;box-shadow:0 10px 30px rgba(0,0,0,.18)}
+.map .addr b{display:block;font-family:var(--head);font-weight:800;text-transform:uppercase;font-size:14px;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
+
+/* footer */
+footer{background:var(--navy-deep);color:#AEB8DC;margin-top:110px;padding:80px 0 0;font-size:15px}
+.f-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:50px;padding-bottom:60px}
+.f-logo{background:#fff;display:inline-block;padding:14px 18px}
+.f-logo img{height:62px}
+.f-about{margin-top:22px;max-width:320px}
+footer h4{font-family:var(--head);font-weight:700;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#fff;margin-bottom:18px}
+footer ul{list-style:none;display:grid;gap:10px}
+footer a{text-decoration:none}
+footer a:hover{color:#fff}
+.f-phone{font-family:var(--head);font-weight:800;font-stretch:85%;font-size:28px;color:#fff;display:block;margin-bottom:10px}
+.f-bottom{border-top:1px solid rgba(255,255,255,.12);padding:22px 0;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:14px}
+.f-bottom a{color:#fff;font-weight:600}
+.f-bottom a:hover{color:var(--red-bright)}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .8s,transform .8s}
+.rv.in{opacity:1;transform:none}
+
+/* responsive */
+@media (max-width:1080px){
+  nav.main{gap:22px}
+  .hero-top{grid-template-columns:1fr;gap:26px}
+  .hero-band{grid-template-columns:1fr}
+  .hero-photo{min-height:380px}
+  .mission .wrap{grid-template-columns:1fr;gap:40px}
+  .big-num{font-size:170px}
+  .svc-grid{grid-template-columns:1fr}
+  .svc-stage{position:relative;top:0;order:-1}
+  .community .wrap{grid-template-columns:1fr;gap:70px}
+  .com-media{max-width:520px}
+  .rev-grid{grid-template-columns:1fr}
+  .rev.feature{grid-row:auto}
+  .safety .wrap{grid-template-columns:1fr;gap:28px}
+  .safety .acsa{border:0;padding:0}
+  .consult-grid{grid-template-columns:minmax(0,1fr)}
+  .f-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:860px){
+  .util-left span:nth-child(2){display:none}
+  nav.main{display:none;position:absolute;top:86px;left:0;right:0;background:#fff;flex-direction:column;align-items:flex-start;padding:24px 4vw;gap:16px;border-bottom:1px solid var(--line)}
+  nav.main.open{display:flex}
+  .burger{display:block}
+  .call-btn small{display:none}
+  .call-btn{padding:10px 14px 10px 10px;font-size:15px}
+}
+@media (max-width:640px){
+  body{font-size:16px}
+  .util .wrap{justify-content:center}
+  .util-left,.util .social{display:none}
+  .util-left:first-child{display:flex}
+  .logo img{height:46px}
+  .call-btn .num{display:none}
+  .hero{padding-top:44px}
+  .svc-head{flex-direction:column;align-items:flex-start}
+  .svc-list .t{font-size:26px}
+  .svc-list .d{display:block}
+  .svc-stage{display:none}
+  .two{grid-template-columns:1fr;gap:0}
+  .quote{padding:34px 24px}
+  .values{grid-template-columns:1fr}
+  .values div+div{border-left:0;padding-left:0;border-top:1px solid var(--line)}
+  .values div{padding-bottom:16px}
+  .com-media .inset{right:-10px;width:42%}
+  .com-media .stamp{left:-8px}
+  .rev-top{flex-direction:column;align-items:flex-start}
+  .rev,.rev.feature{padding:32px 26px}
+  .consult-copy{padding:50px 26px}
+  .consult-copy h2{font-size:34px}
+  .map{min-height:380px}
+  .f-grid{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<div class="util">
+  <div class="wrap">
+    <div class="util-left">
+      <span>Open <b>Mon to Fri, 8am to 5pm</b></span>
+      <span>Unit 111, 10505 42nd Street SE, Calgary, AB</span>
+      <a href="mailto:swardrope@albertajanitorial.com;lwaunch@albertajanitorial.com?subject=Message%20for%20Alberta%20Janitorial%20Ltd">swardrope@albertajanitorial.com</a>
+    </div>
+    <div class="social">
+      <a href="https://www.facebook.com/Alberta-Janitorial-Ltd-1690871430925859/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M14 8V6c0-.9.6-1 1-1h3V1h-4c-4 0-5 3-5 5v2H6v4h3v11h5V12h3.6l.4-4z"/></svg></a>
+      <a href="https://twitter.com/A_Janitorial" target="_blank" rel="noopener" aria-label="Twitter"><svg viewBox="0 0 24 24"><path d="M18.2 2h3.4l-7.4 8.5L23 22h-6.8l-5.3-6.9L4.8 22H1.4l7.9-9L1 2h7l4.8 6.3zM17 20h1.9L7.1 3.9H5.1z"/></svg></a>
+      <a href="https://g.page/AlbertaJanitorialLtd/review?gm" target="_blank" rel="noopener" aria-label="Google reviews"><svg viewBox="0 0 24 24"><path d="M12 10.2v3.9h5.5c-.2 1.4-1.7 4.1-5.5 4.1-3.3 0-6-2.7-6-6.2s2.7-6.2 6-6.2c1.9 0 3.1.8 3.8 1.5l2.6-2.5C16.8 3.3 14.6 2.3 12 2.3 6.6 2.3 2.3 6.6 2.3 12s4.3 9.7 9.7 9.7c5.6 0 9.3-3.9 9.3-9.5 0-.6-.1-1.1-.2-1.6H12z"/></svg></a>
+    </div>
+  </div>
+</div>
+
+<header class="site">
+  <div class="wrap">
+    <a class="logo" href="https://albertajanitorial.com/"><img src="images/alberta-janitorial-logo.png" alt="Alberta Janitorial Ltd."></a>
+    <nav class="main" id="nav">
+      <a class="active" href="https://albertajanitorial.com/">Home</a>
+      <a href="https://albertajanitorial.com/about">About</a>
+      <a href="#services">Services</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="call-btn" href="tel:+14032727801">
+      <span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="#fff"><path d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg></span>
+      <span><small>Call Us Today</small><span class="num">(403) 272-7801</span></span>
+    </a>
+    <button class="burger" aria-label="Menu" onclick="document.getElementById('nav').classList.toggle('open')"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-top">
+      <div>
+        <div class="sub"><i></i>Your Business' Cleanliness Matters to Us</div>
+        <h1 class="h">Let Calgary's Best <em>Janitorial Team</em> Take Care of You!</h1>
+        <div class="deserve">You deserve a clean that's
+          <span class="rotor" id="rotor">
+            <span class="on">timely</span><span>ethical</span><span>spectacular</span><span>punctual</span><span>virtuous</span><span>sparkling</span><span>prompt</span><span>honest</span><span>radiant</span>
+          </span>
+        </div>
+      </div>
+      <div class="hero-side">
+        <p>Commercial, industrial, office, school, warehouse, retail and floor care janitorial for Calgary and Southern Alberta.</p>
+      </div>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="hero-band">
+      <div class="hero-photo">
+        <img src="images/office-interior.jpg" alt="Clean, bright Calgary office interior">
+        <div class="since-tag"><b>1975</b><span>Family owned<br>Serving Calgary</span></div>
+      </div>
+      <form class="quote" id="quote" action="mailto:swardrope@albertajanitorial.com?subject=Free%20Quote%20Request" method="post" enctype="text/plain">
+        <h2>Request a<br>Free Quote</h2>
+        <p class="lead">Tell us about your facility and we'll get back to you.</p>
+        <div class="two">
+          <div class="field"><label for="n">Name</label><input id="n" name="Name" required></div>
+          <div class="field"><label for="p">Phone</label><input id="p" name="Phone" type="tel"></div>
+        </div>
+        <div class="field"><label for="e">Email</label><input id="e" name="Email" type="email" required></div>
+        <div class="field"><label for="f">Facility Type</label>
+          <select id="f" name="Facility">
+            <option>Commercial</option><option>Industrial</option><option>Office</option><option>School</option><option>Warehouse</option><option>Retail</option><option>Floors</option>
+          </select>
+        </div>
+        <div class="field"><label for="m">Message</label><textarea id="m" name="Message"></textarea></div>
+        <button class="submit" type="submit">Get My Free Quote <span>&rarr;</span></button>
+        <small class="note">Prefer to talk? Call <a href="tel:+14032727801">(403) 272-7801</a></small>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="mission">
+  <div class="wrap">
+    <div class="rv">
+      <div class="big-num">45<sup>+</sup></div>
+      <div class="big-cap">Years of Experience</div>
+    </div>
+    <div class="mission-text rv">
+      <div class="eyebrow">Our Mission</div>
+      <p class="lede" style="margin-top:22px">With over 45 years of experience, we truly understand that our customers care about a <mark>timely, ethical clean</mark> they can depend on. And that's what we deliver every day.</p>
+      <p class="more">Our reliable, punctual and professional cleaning staff work towards a perfect clean, perfectly on time to meet your needs, every time.</p>
+      <a class="link-arrow" href="https://albertajanitorial.com/about">Read Our Mission <span>&rarr;</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="svc-head rv">
+      <h2 class="h">Every Facility.<br><span>One Trusted Team.</span></h2>
+      <p>Commercial, industrial, office, school, warehouse, retail and floor care janitorial, tailored to the way your space works.</p>
+    </div>
+    <div class="svc-grid">
+      <ul class="svc-list" id="svcList">
+        <li class="on" data-i="0"><button><span class="n">01</span><span class="t">Commercial</span><span class="a"><svg viewBox="0 0 12 12"><path d="M2 10L10 2M4 2h6v6"/></svg></span></button><p class="d">Commercial facilities require the professional attention of a dedicated team to maintain peak operation.</p></li>
+        <li data-i="1"><button><span class="n">02</span><span class="t">Industrial</span><span class="a"><svg viewBox="0 0 12 12"><path d="M2 10L10 2M4 2h6v6"/></svg></span></button><p class="d">Having a timely, professional clean is key in an industrial setting where safety is of the utmost importance.</p></li>
+        <li data-i="2"><button><span class="n">03</span><span class="t">Office</span><span class="a"><svg viewBox="0 0 12 12"><path d="M2 10L10 2M4 2h6v6"/></svg></span></button><p class="d">Let us help keep common areas, kitchens, and bathrooms clean, so you and your staff can focus on work.</p></li>
+        <li data-i="3"><button><span class="n">04</span><span class="t">Schools</span><span class="a"><svg viewBox="0 0 12 12"><path d="M2 10L10 2M4 2h6v6"/></svg></span></button><p class="d">We take pride in helping schools provide a safe, germ free environment so students can focus on learning.</p></li>
+        <li data-i="4"><button><span class="n">05</span><span class="t">Warehouses</span><span class="a"><svg viewBox="0 0 12 12"><path d="M2 10L10 2M4 2h6v6"/></svg></span></button><p class="d">We tailor a specific program based on each individual facility's requirements to suit your business' needs.</p></li>
+        <li data-i="5"><button><span class="n">06</span><span class="t">Retail</span><span class="a"><svg viewBox="0 0 12 12"><path d="M2 10L10 2M4 2h6v6"/></svg></span></button><p class="d">Every store has different needs, and we work with you to keep your space clean and your customers comfortable.</p></li>
+        <li data-i="6"><button><span class="n">07</span><span class="t">Floors</span><span class="a"><svg viewBox="0 0 12 12"><path d="M2 10L10 2M4 2h6v6"/></svg></span></button><p class="d">We specialize in commercial cleaning as well as restorative stripping and recoating for heavy traffic areas.</p></li>
+      </ul>
+      <div class="svc-stage">
+        <div class="svc-frame" id="svcFrame">
+          <img class="on" src="images/service-commercial.jpg" alt="Commercial janitorial cleaning">
+          <img src="images/service-industrial.jpg" alt="Industrial facility cleaning">
+          <img src="images/service-office.jpg" alt="Office cleaning">
+          <img src="images/service-schools.jpg" alt="School cleaning">
+          <img src="images/service-warehouses.jpg" alt="Warehouse cleaning">
+          <img src="images/service-retail.jpg" alt="Retail store cleaning">
+          <img src="images/service-floors.jpg" alt="Floor stripping and recoating">
+        </div>
+        <div class="svc-cap">
+          <div class="num" id="svcNum">01</div>
+          <div><h3 id="svcT">Commercial</h3><p id="svcD">Commercial facilities require the professional attention of a dedicated team to maintain peak operation.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="community">
+  <div class="wrap">
+    <div class="com-media rv">
+      <div class="main"><img src="images/squeegee-mirror.jpg" alt="Janitorial cleaner polishing glass"></div>
+      <div class="inset"><img src="images/hands-wipe-table.jpg" alt="Cleaner wiping a table surface"></div>
+      <div class="stamp"><small>Proudly local</small>Calgary &amp;<br>Southern Alberta</div>
+    </div>
+    <div class="rv">
+      <div class="eyebrow">Our Community</div>
+      <h2 class="h">Proudly Serving Calgary and Southern Alberta <span>since 1975</span></h2>
+      <p>With over 45 years of experience, we truly understand our customers' needs. We are a family owned business with a focus on environmentally conscious cleaning, and an emphasis on our clients' time.</p>
+      <div class="values">
+        <div><b>Family Owned</b><span>A Calgary business since 1975.</span></div>
+        <div><b>Environmentally Conscious</b><span>Cleaning with care for our environment.</span></div>
+        <div><b>Your Time First</b><span>An emphasis on our clients' time.</span></div>
+      </div>
+      <a class="link-arrow" href="https://albertajanitorial.com/about">Learn More <span>&rarr;</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="reviews" id="reviews">
+  <div class="wrap">
+    <div class="rev-top rv">
+      <div>
+        <div class="eyebrow">Reviews</div>
+        <h2 class="h" style="margin-top:18px">What Our<br>Clients Say</h2>
+      </div>
+      <div class="rev-links">
+        <a href="https://g.page/AlbertaJanitorialLtd/review?gm" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="#E1000F"><path d="M12 10.2v3.9h5.5c-.2 1.4-1.7 4.1-5.5 4.1-3.3 0-6-2.7-6-6.2s2.7-6.2 6-6.2c1.9 0 3.1.8 3.8 1.5l2.6-2.5C16.8 3.3 14.6 2.3 12 2.3 6.6 2.3 2.3 6.6 2.3 12s4.3 9.7 9.7 9.7c5.6 0 9.3-3.9 9.3-9.5 0-.6-.1-1.1-.2-1.6H12z"/></svg>Leave Us a Review</a>
+        <a href="https://www.facebook.com/Alberta-Janitorial-Ltd-1690871430925859/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="#00227A"><path d="M14 8V6c0-.9.6-1 1-1h3V1h-4c-4 0-5 3-5 5v2H6v4h3v11h5V12h3.6l.4-4z"/></svg>Facebook</a>
+      </div>
+    </div>
+    <div class="rev-grid">
+      <div class="rev feature rv">
+        <div class="stars" aria-label="5 out of 5"><svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.6 4.3 2.1 7.2L12 16.3 5.5 20.5l2.1-7.2L2 9h7z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.6 4.3 2.1 7.2L12 16.3 5.5 20.5l2.1-7.2L2 9h7z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.6 4.3 2.1 7.2L12 16.3 5.5 20.5l2.1-7.2L2 9h7z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.6 4.3 2.1 7.2L12 16.3 5.5 20.5l2.1-7.2L2 9h7z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.6 4.3 2.1 7.2L12 16.3 5.5 20.5l2.1-7.2L2 9h7z"/></svg></div>
+        <blockquote>The team at Alberta Janitorial are very professional, punctual and diligent with their services. From the beginning of our relationship they have been great to work with and provide exceptional service.</blockquote>
+        <div class="who"><div class="ini">LC</div><div><b>Luc Carriere</b><span>Tartan Energy Group</span></div></div>
+      </div>
+      <div class="rev rv">
+        <div class="stars" aria-label="5 out of 5"><svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.6 4.3 2.1 7.2L12 16.3 5.5 20.5l2.1-7.2L2 9h7z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.6 4.3 2.1 7.2L12 16.3 5.5 20.5l2.1-7.2L2 9h7z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.6 4.3 2.1 7.2L12 16.3 5.5 20.5l2.1-7.2L2 9h7z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.6 4.3 2.1 7.2L12 16.3 5.5 20.5l2.1-7.2L2 9h7z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.6 4.3 2.1 7.2L12 16.3 5.5 20.5l2.1-7.2L2 9h7z"/></svg></div>
+        <blockquote>The cleaners provided by Alberta Janitorial are hard working &amp; punctual. Concerns are dealt with professionally &amp; promptly by the staff in the office.</blockquote>
+        <div class="who"><div class="ini">KB</div><div><b>Kristi Bower</b><span>Client</span></div></div>
+      </div>
+      <div class="rev rv">
+        <div class="stars" aria-label="5 out of 5"><svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.6 4.3 2.1 7.2L12 16.3 5.5 20.5l2.1-7.2L2 9h7z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.6 4.3 2.1 7.2L12 16.3 5.5 20.5l2.1-7.2L2 9h7z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.6 4.3 2.1 7.2L12 16.3 5.5 20.5l2.1-7.2L2 9h7z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.6 4.3 2.1 7.2L12 16.3 5.5 20.5l2.1-7.2L2 9h7z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.6 4.3 2.1 7.2L12 16.3 5.5 20.5l2.1-7.2L2 9h7z"/></svg></div>
+        <blockquote>I would highly recommend Alberta Janitorial for any businesses looking to have their cleaning needs looked after.</blockquote>
+        <div class="who"><div class="ini">JN</div><div><b>Jay Nyholt</b><span>Owner, XFactor Indoor Golf</span></div></div>
+        <a class="more" href="https://albertajanitorial.com/jays-review">Read Jay's Full Review! &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="safety">
+  <div class="wrap rv">
+    <img class="seal" src="images/cor-seal.png" alt="Certificate of Recognition workplace safety seal">
+    <div>
+      <div class="eyebrow">Partnerships</div>
+      <h3>Certificate of Recognition (COR) Holder</h3>
+      <p>We have jointly issued a Certificate of Recognition (COR) with the Government of Alberta. This COR shows that our health and safety management system has been evaluated by a certified auditor and meets the provincial standards laid out by Occupational Health and Safety (OHS). Learn more <a href="https://www.alberta.ca/get-certificate-recognition.aspx" target="_blank" rel="noopener">here</a>.</p>
+    </div>
+    <img class="acsa" src="images/acsa-logo.png" alt="Alberta Construction Safety Association">
+  </div>
+</section>
+
+<section class="consult" id="contact">
+  <div class="wrap">
+    <div class="consult-grid rv">
+      <div class="consult-copy">
+        <h2 class="h">Call Us Today for FREE Consultations</h2>
+        <p>Let us take care of the hard work for you and get in touch today!</p>
+        <div class="ways">
+          <a href="tel:+14032727801"><span class="ic"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg></span><span><b>Call (403) 272-7801</b><span>Mon to Fri, 8am to 5pm</span></span><span class="go">&rarr;</span></a>
+          <a href="mailto:swardrope@albertajanitorial.com;lwaunch@albertajanitorial.com?subject=Message%20for%20Alberta%20Janitorial%20Ltd"><span class="ic"><svg viewBox="0 0 24 24"><path d="M2 5h20v14H2zm2 2v.5l8 5 8-5V7zm16 10V9.8l-8 5-8-5V17z"/></svg></span><span><b>Email Us Today!</b><span>Ask us how we can help you today!</span></span><span class="go">&rarr;</span></a>
+          <a href="https://www.facebook.com/Alberta-Janitorial-Ltd-1690871430925859/" target="_blank" rel="noopener"><span class="ic"><svg viewBox="0 0 24 24"><path d="M14 8V6c0-.9.6-1 1-1h3V1h-4c-4 0-5 3-5 5v2H6v4h3v11h5V12h3.6l.4-4z"/></svg></span><span><b>Visit us on Facebook!</b><span>Alberta Janitorial Ltd.</span></span><span class="go">&rarr;</span></a>
+        </div>
+      </div>
+      <div class="map">
+        <iframe src="https://maps.google.com/maps?q=10505%2042%20St%20SE%2C%20Calgary%2C%20AB%20T2C%205B9%2C%20Canada&t=m&z=13&output=embed&iwloc=near" title="Alberta Janitorial Ltd. location" loading="lazy"></iframe>
+        <div class="addr"><b>Visit Our Office</b>Unit 111, 10505 42nd Street SE<br>Calgary, AB T2C 5B9</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="f-grid">
+      <div>
+        <a class="f-logo" href="https://albertajanitorial.com/"><img src="images/alberta-janitorial-logo.png" alt="Alberta Janitorial Ltd."></a>
+        <p class="f-about">Proudly serving Calgary and Southern Alberta since 1975. A family owned janitorial company.</p>
+      </div>
+      <div>
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="https://albertajanitorial.com/">Home</a></li>
+          <li><a href="https://albertajanitorial.com/about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Visit</h4>
+        <ul>
+          <li>Unit 111, 10505 42nd Street SE<br>Calgary, AB T2C 5B9</li>
+          <li>Monday to Friday<br>8am to 5pm</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Call Us</h4>
+        <a class="f-phone" href="tel:+14032727801">(403) 272-7801</a>
+        <ul>
+          <li><a href="mailto:swardrope@albertajanitorial.com">swardrope@albertajanitorial.com</a></li>
+          <li><a href="mailto:lwaunch@albertajanitorial.com">lwaunch@albertajanitorial.com</a></li>
+        </ul>
+        <div class="social" style="margin-top:20px">
+          <a href="https://www.facebook.com/Alberta-Janitorial-Ltd-1690871430925859/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M14 8V6c0-.9.6-1 1-1h3V1h-4c-4 0-5 3-5 5v2H6v4h3v11h5V12h3.6l.4-4z"/></svg></a>
+          <a href="https://twitter.com/A_Janitorial" target="_blank" rel="noopener" aria-label="Twitter"><svg viewBox="0 0 24 24"><path d="M18.2 2h3.4l-7.4 8.5L23 22h-6.8l-5.3-6.9L4.8 22H1.4l7.9-9L1 2h7l4.8 6.3zM17 20h1.9L7.1 3.9H5.1z"/></svg></a>
+          <a href="https://g.page/AlbertaJanitorialLtd/review?gm" target="_blank" rel="noopener" aria-label="Google reviews"><svg viewBox="0 0 24 24"><path d="M12 10.2v3.9h5.5c-.2 1.4-1.7 4.1-5.5 4.1-3.3 0-6-2.7-6-6.2s2.7-6.2 6-6.2c1.9 0 3.1.8 3.8 1.5l2.6-2.5C16.8 3.3 14.6 2.3 12 2.3 6.6 2.3 2.3 6.6 2.3 12s4.3 9.7 9.7 9.7c5.6 0 9.3-3.9 9.3-9.5 0-.6-.1-1.1-.2-1.6H12z"/></svg></a>
+        </div>
+      </div>
+    </div>
+    <div class="f-bottom">
+      <span>&copy; 2026 Alberta Janitorial Ltd. All rights reserved.</span>
+      <span>Design by <a href="https://cleaningdigital.ca/" target="_blank" rel="noopener">Cleaning Digital</a>.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// rotating tagline (shown once)
+(function(){
+  var s=document.querySelectorAll('#rotor span'),i=0;
+  setInterval(function(){
+    var c=s[i];c.classList.remove('on');c.classList.add('out');
+    i=(i+1)%s.length;var n=s[i];n.classList.remove('out');
+    void n.offsetWidth;n.classList.add('on');
+    setTimeout(function(){c.classList.remove('out')},600);
+  },2200);
+})();
+// services index
+(function(){
+  var items=document.querySelectorAll('#svcList li'),imgs=document.querySelectorAll('#svcFrame img');
+  function show(i){
+    items.forEach(function(li,k){li.classList.toggle('on',k===i)});
+    imgs.forEach(function(im,k){im.classList.toggle('on',k===i)});
+    document.getElementById('svcNum').textContent=('0'+(i+1));
+    document.getElementById('svcT').textContent=items[i].querySelector('.t').textContent;
+    document.getElementById('svcD').textContent=items[i].querySelector('.d').textContent;
+  }
+  items.forEach(function(li,k){
+    li.addEventListener('mouseenter',function(){show(k)});
+    li.querySelector('button').addEventListener('click',function(){show(k)});
+  });
+})();
+// reveal on scroll
+(function(){
+  var els=document.querySelectorAll('.rv');
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return}
+  var io=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+  els.forEach(function(e){io.observe(e)});
+})();
+</script>
+</body>
+</html>
