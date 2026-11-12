@@ -204,8 +204,10 @@ nav.main a.active::after,nav.main a:hover::after{content:"";position:absolute;le
 .ways span{font-size:14px;opacity:.85}
 .ways .go{font-size:20px}
 .map{min-height:520px;position:relative;background:var(--navy-deep)}
-.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0;filter:grayscale(.35) contrast(1.05)}
-.map .addr{position:absolute;left:24px;bottom:24px;background:#fff;color:var(--ink);padding:18px 22px;max-width:300px;box-shadow:0 10px 30px rgba(0,0,0,.18)}
+.map-art{position:absolute;inset:0;width:100%;height:100%}
+.map .dir{display:inline-block;margin-top:12px;background:var(--navy);color:#fff;text-decoration:none;font-family:var(--head);font-weight:700;font-size:13px;letter-spacing:.12em;text-transform:uppercase;padding:10px 14px}
+.map .dir:hover{background:var(--red)}
+.map .addr{position:absolute;left:24px;bottom:24px;z-index:2;background:#fff;color:var(--ink);padding:18px 22px;max-width:300px;box-shadow:0 10px 30px rgba(0,0,0,.18)}
 .map .addr b{display:block;font-family:var(--head);font-weight:800;text-transform:uppercase;font-size:14px;letter-spacing:.1em;color:var(--red);margin-bottom:4px}
 
 /* footer */
@@ -491,8 +493,16 @@ footer a:hover{color:#fff}
         </div>
       </div>
       <div class="map">
-        <iframe src="https://maps.google.com/maps?q=10505%2042%20St%20SE%2C%20Calgary%2C%20AB%20T2C%205B9%2C%20Canada&t=m&z=13&output=embed&iwloc=near" title="Alberta Janitorial Ltd. location" loading="lazy"></iframe>
-        <div class="addr"><b>Visit Our Office</b>Unit 111, 10505 42nd Street SE<br>Calgary, AB T2C 5B9</div>
+        <svg class="map-art" viewBox="0 0 600 520" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <rect width="600" height="520" fill="#0A1A52"/>
+          <g fill="#0E2263"><rect x="20" y="30" width="150" height="110"/><rect x="200" y="30" width="170" height="110"/><rect x="400" y="30" width="180" height="110"/><rect x="20" y="180" width="150" height="130"/><rect x="200" y="180" width="80" height="130"/><rect x="310" y="180" width="60" height="130"/><rect x="400" y="180" width="180" height="130"/><rect x="20" y="350" width="150" height="150"/><rect x="200" y="350" width="170" height="150"/><rect x="400" y="350" width="180" height="150"/></g>
+          <g stroke="#1B3487" stroke-width="2" fill="none"><path d="M0 160H600M0 330H600M185 0V520M385 0V520"/><path d="M0 95H600M0 250H600M0 430H600M95 0V520M290 0V520M490 0V520" stroke-width="1" opacity=".6"/></g>
+          <path d="M-20 470C120 400 220 300 300 240S470 120 620 60" stroke="#26419A" stroke-width="10" fill="none"/>
+          <path d="M-20 470C120 400 220 300 300 240S470 120 620 60" stroke="#3A57B5" stroke-width="2" stroke-dasharray="10 10" fill="none"/>
+          <circle cx="335" cy="255" r="60" fill="#F30000" opacity=".12"/><circle cx="335" cy="255" r="34" fill="#F30000" opacity=".2"/>
+          <path d="M335 270c-14-18-24-30-24-42a24 24 0 0 1 48 0c0 12-10 24-24 42z" fill="#F30000"/><circle cx="335" cy="228" r="9" fill="#fff"/>
+        </svg>
+        <div class="addr"><b>Visit Our Office</b>Unit 111, 10505 42nd Street SE<br>Calgary, AB T2C 5B9<a class="dir" href="https://www.google.com/maps/search/?api=1&amp;query=10505+42+St+SE+Calgary+AB+T2C+5B9" target="_blank" rel="noopener">Get Directions &rarr;</a></div>
       </div>
     </div>
   </div>
